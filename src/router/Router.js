@@ -4,7 +4,7 @@ import SeatLayout from '../pages/SeatLayoutContainer/SeatLayout';
 export const router = createBrowserRouter([
     {
       path: "/",
-      element: <div>Hello world!</div>,
+      element: <SeatLayout/>,
     },
     {
         path: "/seatlayout",
