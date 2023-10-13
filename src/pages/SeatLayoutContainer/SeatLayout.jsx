@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+import React,{useEffect, useState} from 'react'
 import { theatreData } from '../../utils/TheatreData';
 import SeatGroup from '../../components/SeatComponent/SeatGroup';
 import styles from './SeatLayout.module.scss';
@@ -8,9 +8,12 @@ import { AiOutlineClose } from 'react-icons/ai';
 import { BsFillPencilFill } from 'react-icons/bs';
 import { useSelector, useDispatch } from 'react-redux'
 import { decrement, fetchUsers, increment } from '../../redux/seatSlice'
+import Ticket from '../../components/TicketComponent/Ticket';
 
 const SeatLayout = () => {
+  const noOfSeats =useSelector((state) => state.seat.noOfSeats);
   const seatData = useSelector((state) => state.seat.data);
+  const [ticketPopup, toggleTicketPopup] = useState(false);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchUsers());
@@ -33,11 +36,11 @@ const SeatLayout = () => {
         </div>
         </div>
         <div className={styles.right_subcontainer}>
-        <div className={styles.btn} onClick={() => dispatch(increment())}>
-        2 Tickets
-        <div>
+        <div className={styles.btn} onClick={() => toggleTicketPopup(true)}>
+        {noOfSeats} Tickets
+        <span>
         <BsFillPencilFill/>
-        </div>
+        </span>
         </div>
         <div style={{color:'#fff'}}>
         <AiOutlineClose/>
@@ -74,6 +77,7 @@ const SeatLayout = () => {
           </div>
         </div>
     }
+    {ticketPopup && <Ticket toggleTicketPopup={toggleTicketPopup}/>}
     </>
   )
 }

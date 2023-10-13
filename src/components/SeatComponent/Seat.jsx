@@ -15,6 +15,7 @@ const Seat = ({ seatId, type, groupIndex, rowIndex, seatIndex, updateData }) => 
           <div className={`${styles.seat} ${styles.not_available}`}>{seatId}</div>
         )}
         {type === "BLOCKED" && <div className={`${styles.seat} ${styles.blocked}`}>{seatId}</div>}
+        {type === "SELECTED" && <div className={`${styles.seat} ${styles.select}`}>{seatId}</div>}
       </div>
     );
   };
