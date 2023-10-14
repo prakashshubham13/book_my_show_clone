@@ -7,7 +7,7 @@ const SeatRow = ({ rowId, seatRowData, groupIndex, rowIndex, updateData }) => {
   // console.log("ss",seatRowData);
   return (
     <div className={styles.seatrow_container} >
-      <label style={{width:'20px',fontSize:'14px',color:"#b3b3b3  "}}>{rowId}</label>
+      <label>{rowId}</label>
       <div className={styles.row}>
         {seatRowData.map((data,index) => (
           <Seat seatId={data.seatId} type={data.type} groupIndex={groupIndex} rowIndex={rowIndex} seatIndex={index} updateData={updateData} />

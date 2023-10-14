@@ -3,6 +3,7 @@
     height: 100vh;
     overflow-y: scroll;
     overflow: hidden;
+    background-color: orange;
     .header{
         position: relative;
         background: #1f2533;
@@ -57,6 +58,7 @@
     }
     .setbox{
         padding: 4vh 0;
+        overflow-x: hidden;
         overflow-y: scroll;
         height: 58vh;
         background: #fafafa;
@@ -142,4 +144,13 @@ col{
 row{
     display: flex;
     flex-direction: row;
+}
+
+@media only screen and (max-width: 768px) {
+    .layoutcontainer{
+        background-color: #1ea83c;
+    }
+    .setbox{
+        width: 100vw;
+    }
 }

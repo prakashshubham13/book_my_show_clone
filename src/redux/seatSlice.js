@@ -57,7 +57,8 @@ else
 limit = state.noOfSeats;
 
       for(let i = 0;i<limit;i++){
-        if(i>=state.data[groupIndex].seatRowData[rowIndex].length || state.data[groupIndex].seatRowData[rowIndex].seatRowData[seatIndex+i].type !== "AVAILABLE")
+        // console.log("************-----",state.data[groupIndex], state.data[groupIndex].seatRowData[rowIndex], state.data[groupIndex].seatRowData[rowIndex].seatRowData[seatIndex+i], state.data[groupIndex].seatRowData[rowIndex].seatRowData[seatIndex+i].type);
+        if(i>=state?.data[groupIndex]?.seatRowData[rowIndex]?.length || state?.data[groupIndex]?.seatRowData[rowIndex]?.seatRowData[seatIndex+i]?.type !== "AVAILABLE")
         break;
         console.log(i);
       state.data[groupIndex].seatRowData[rowIndex].seatRowData[seatIndex+i].type = "SELECTED";
