@@ -17,7 +17,7 @@ const SeatLayout = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchUsers());
-  }, [])
+  }, []);
   return (
     <>
     {false?<h1>Loading</h1>:

@@ -138,23 +138,44 @@
     }
 }
 
-col{
+.col{
     display: flex;
     flex-direction: column;
 }
 
-row{
+.row{
     display: flex;
     flex-direction: row;
 }
 
 @media only screen and (max-width: 768px) {
     .layoutcontainer{
-        background: #fafafa;
+        .header{
+            div{
+                h1{
+font-size: 10px;
+                }
+            }
+            .details{
+                font-size: 8px;
+                span{
+                font-weight: 600;    
+                display: flex;
+                flex-direction: column;
+                &:nth-child(2){
+                    display: none;
+                }
+            }
+            }
+            .right_subcontainer{
+                flex-direction: column-reverse;
+                gap: 10px;
+            }
+        }
     }
     .setbox{
         width: 95%;
         margin: auto;
-        padding: 6px 12px;
+        padding: 6px 18px;
     }
 }
